@@ -1,18 +1,18 @@
 <form method="post" action="{% url 'product_delete' product.id %}" class="js-product-delete-form">
-  {% csrf_token %}
-  <div class="modal-header">
-    <h5 class="modal-title">Confirmar producto a eliminar</h5>
-    <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close">
-      <span aria-hidden="true"></span>
-  </div>
+    {% csrf_token %}
+    <div class="modal-header">
+        <h5 class="modal-title">Confirmar producto a eliminar</h5>
+        <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true"></span>
+    </div>
 
-  <div class="modal-body">
-    <p class="lead">¿Está seguro de que desea eliminar el producto?</p>
-    <p> <strong>{{ product.nombre }}</strong></p>
-  </div>
+    <div class="modal-body">
+        <p class="lead">¿Está seguro de que desea eliminar el producto?</p>
+        <p> <strong>{{ product.nombre }}</strong></p>
+    </div>
 
-  <div class="modal-footer">
-    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Close</button>
-    <button type="submit" class="btn btn-danger">Eliminar</button>
-  </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-danger">Eliminar</button>
+    </div>
 </form>

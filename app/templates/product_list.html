@@ -1,44 +1,46 @@
-<!--templates/app/product_list.html-->
+<!-- templates/product_list.html -->
 
 {% extends 'base.html' %}
- 
+
+<!-- Cargamos archivos estaticos -->
 {% load static %}
- 
-{% block javascript %}
-  <script src="{% static 'js/script.js' %}"></script>
-  <link href="{% static 'css/estilos.css' %}" rel="stylesheet">
-{% endblock %}
- 
+
 {% block content %}
-  
-  <p>
+<p>
     <button type="button" class="btn btn-primary js-create-product" data-url="{% url 'product_create' %}">
-      <span class="bi bi-check2"></span>
-      Nuevo Producto
+        <span class="bi bi-check2"></span>
+        Nuevo Producto
     </button>
-  </p>
-  <table class="table" id="product-table">
+</p>
+
+<table class="table" id="product-table">
     <thead>
-      <tr>
-        <th>ID</th>
-        <th>Nombre</th>
-        <th>Fecha</th>
-        <th>Category</th>
-        <th>Codigo</th>
-        <th>Stock</th>
-        <th>Precio</th>
-        <th colspan="2">    Acciones</th>
-      </tr>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Fecha</th>
+            <th>Category</th>
+            <th>Codigo</th>
+            <th>Stock</th>
+            <th>Precio</th>
+            <th colspan="2"> Acciones</th>
+        </tr>
     </thead>
     <tbody>
-      {% include 'includes/partial_product_list.html' %}
+        {% include 'includes/partial_product_list.html' %}
     </tbody>
-  </table>
-  <div class="modal fade" id="modal-product">
+</table>
+
+<div class="modal fade" id="modal-product">
     <div class="modal-dialog">
-      <div class="modal-content">
- 
-      </div>
+        <div class="modal-content">
+
+        </div>
     </div>
-  </div>
+</div>
+{% endblock %}
+
+{% block javascript %}
+<script src="{% static 'js/script.js' %}"></script>
+<link href="{% static 'css/estilos.css' %}" rel="stylesheet">
 {% endblock %}

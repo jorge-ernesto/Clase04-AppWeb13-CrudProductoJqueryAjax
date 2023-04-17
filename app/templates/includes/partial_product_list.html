@@ -1,26 +1,26 @@
 {% for product in products %}
 <tr>
-  <td>{{ product.id }}</td>
-  <td>{{ product.nombre }}</td>
-  <td>{{ product.fecha }}</td>
-  <td>{{ product.get_categoria_display }}</td>
-  <td>{{ product.codigo }}</td>
-  <td>{{ product.cantidad }}</td>
-  <td>{{ product.precio }}</td>
-  <td colspan="2" style="width: 150px">
-    <button type="button" class="btn btn-warning btn-sm js-update-product"
-      data-url="{% url 'product_update' product.id %}">
-      <span class="bi bi-pencil"></span> Editar
-    </button>
-  
-    <button type="button" class="btn btn-danger btn-sm js-delete-product"
-      data-url="{% url 'product_delete' product.id %}">
-      <span class="bi bi-trash"></span> Eliminar
-    </button>
-  </td>
+    <td>{{ product.id }}</td>
+    <td>{{ product.nombre }}</td>
+    <td>{{ product.fecha }}</td>
+    <td>{{ product.get_categoria_display }}</td>
+    <td>{{ product.codigo }}</td>
+    <td>{{ product.cantidad }}</td>
+    <td>{{ product.precio }}</td>
+    <td colspan="2" style="width: 150px">
+        <button type="button" class="btn btn-warning btn-sm js-update-product"
+            data-url="{% url 'product_update' product.id %}">
+            <span class="bi bi-pencil"></span> Editar
+        </button>
+
+        <button type="button" class="btn btn-danger btn-sm js-delete-product"
+            data-url="{% url 'product_delete' product.id %}">
+            <span class="bi bi-trash"></span> Eliminar
+        </button>
+    </td>
 </tr>
 {% empty %}
 <tr>
-  <td colspan="8" class="text-center bg-warning">No hay productos</td>
+    <td colspan="8" class="text-center bg-warning">No hay productos</td>
 </tr>
 {% endfor %}
